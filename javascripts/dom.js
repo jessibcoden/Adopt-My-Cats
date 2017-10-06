@@ -4,24 +4,24 @@ const domString = (kitties) => {
 	let catString = '';
 	for(let i = 0; i < kitties.length; i++) {
 		let catCard = '';
-		catCard += `<div class="cat-card">
+		catCard += `<card class="cat-card">
 			  			<div class="image-container">
-			    			<img src="IMAGELINK">
+			    			<img src="${kitties[i].imageUrl}">
 			  			</div>
 			  			<div class="description-container">
-						    <h3> CAT NAME </h3>
-						    <p> Color: COLORRRR </p>
-						    <p> Skills: SKILLLLLZ </p>`;
+						    <h3>  ${kitties[i].name}  </h3>
+						    <p> Color: ${kitties[i].color} </p>
+						    <p> Skills: ${kitties[i].specialSkill} </p>`;
 		
-		if(kitties[i].toeCount <= 10) {
-			catCard +=		`<p class="disabled-cat"> Toes: TOESSSS </p>`;
+		if(kitties[i].numberOfToes <= 10) {
+			catCard +=		`<p class="brokenCat"> Toes: ${kitties[i].numberOfToes} </p>`;
 		
 		}else {
-			catCard +=		`<p> Toe Count: ${kitties[i].toeCount} </p>`;
+			catCard +=		`<p> Toe Count: ${kitties[i].numberOfToes} </p>`;
 		}
 
 		catCard +=	  		`</div>
-					</div>`;
+					</card>`;
 
 		catString += catCard;
 	}
