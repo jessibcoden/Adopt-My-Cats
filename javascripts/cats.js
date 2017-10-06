@@ -1,21 +1,26 @@
 "use strict";
 
-const dom = require('./dom');
+const dom = require('./dom.js');
 
 let cats = [];
 
-$.ajax('https://random-dogs-api.herokuapp.com/cats/${value}').done((cats) => {
-	cats = cats.cats;
-	dom.domString(cats);
+const catCount = (value) => {
+	console.log("value", value);
 
-console.log(cats);
+	$.ajax(`https://random-dogs-api.herokuapp.com/cats/${value}`).done((cats1) => {
+		console.log(cats1);		
+		cats = cats1.cats;
+		dom.domString(cats);
 
-	}).fail((error) => {
-		console.log(error);
-});
+	console.log(cats);
+
+		}).fail((error) => {
+			console.log(error);
+	});
+};
 
 const getCats = () => {
 	return cats;
 };
 
-module.exports = {getCats};
+module.exports = {getCats, catCount};
