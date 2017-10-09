@@ -1,7 +1,5 @@
 # Adopt-My-Cats
 
-# Browserify Sandwich
-
 > Nashville Software School, Full-Stack Dev Bootcamp, Front-End Independent Exercise
 > 
 
